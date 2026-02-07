@@ -744,23 +744,43 @@ header h1{
 </section>
 
 <!-- ===== TIME TOGETHER CARD ===== -->
-<section id="time-together" style="background: linear-gradient(rgba(0,0,0,0.35), rgba(255,107,139,0.25)), url('images/timer_bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
-  <h2 style="font-size:3rem; margin-bottom:30px; color:#fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">💖 Our Love Timer</h2>
-  <div class="card-wrapper" style="display:flex; justify-content:center;">
-    <div class="card" style="background:linear-gradient(180deg, rgba(255,245,247,0.95), rgba(255,238,244,0.95)); backdrop-filter:blur(8px); padding:20px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.2); width:350px; text-align:center; border:1px solid rgba(255,107,139,0.12);">
-      <h3 style="font-size:1.5rem; margin-bottom:15px; color:#ff6b8b;">Days in Love</h3>
-      <div class="timer" style="font-size:1rem; color:#4b2b3a; line-height:1.8;">
-        <p>Years: <span id="years">0</span></p>
-        <p>Months: <span id="months">0</span></p>
-        <p>Weeks: <span id="weeks">0</span></p>
-        <p>Days: <span id="days">0</span></p>
-        <p>Hours: <span id="hours">0</span></p>
-        <p>Minutes: <span id="minutes">0</span></p>
-        <p>Seconds: <span id="seconds">0</span></p>
-      </div>
+<section id="time-together" style="background: linear-gradient(135deg, rgba(255,107,139,0.12), rgba(255,180,200,0.08)), url('images/timer_bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+  <h2 style="font-size:3rem; margin-bottom:40px; color:#fff; text-shadow: 3px 3px 8px rgba(0,0,0,0.6); font-weight:700; letter-spacing:1px;">💖 Our Love Timer</h2>
+  <div class="card-wrapper" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:16px; width:90%; max-width:900px; padding:30px; background:linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.1)); border-radius:20px; backdrop-filter:blur(10px);">
+    <div class="timer-box" style="background:linear-gradient(135deg, #ff6b8b, #ff9eb3); padding:18px; border-radius:16px; text-align:center; box-shadow:0 12px 30px rgba(203,102,134,0.2); color:white; transition:transform 0.3s ease;">
+      <p style="font-size:0.85rem; margin:0 0 8px 0; opacity:0.9; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Years</p>
+      <p style="font-size:2.2rem; margin:0; font-weight:700;" id="years">0</p>
+    </div>
+    <div class="timer-box" style="background:linear-gradient(135deg, #ff6b8b, #ff9eb3); padding:18px; border-radius:16px; text-align:center; box-shadow:0 12px 30px rgba(203,102,134,0.2); color:white; transition:transform 0.3s ease;">
+      <p style="font-size:0.85rem; margin:0 0 8px 0; opacity:0.9; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Months</p>
+      <p style="font-size:2.2rem; margin:0; font-weight:700;" id="months">0</p>
+    </div>
+    <div class="timer-box" style="background:linear-gradient(135deg, #ff6b8b, #ff9eb3); padding:18px; border-radius:16px; text-align:center; box-shadow:0 12px 30px rgba(203,102,134,0.2); color:white; transition:transform 0.3s ease;">
+      <p style="font-size:0.85rem; margin:0 0 8px 0; opacity:0.9; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Weeks</p>
+      <p style="font-size:2.2rem; margin:0; font-weight:700;" id="weeks">0</p>
+    </div>
+    <div class="timer-box" style="background:linear-gradient(135deg, #ff6b8b, #ff9eb3); padding:18px; border-radius:16px; text-align:center; box-shadow:0 12px 30px rgba(203,102,134,0.2); color:white; transition:transform 0.3s ease;">
+      <p style="font-size:0.85rem; margin:0 0 8px 0; opacity:0.9; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Days</p>
+      <p style="font-size:2.2rem; margin:0; font-weight:700;" id="days">0</p>
+    </div>
+    <div class="timer-box" style="background:linear-gradient(135deg, #ff6b8b, #ff9eb3); padding:18px; border-radius:16px; text-align:center; box-shadow:0 12px 30px rgba(203,102,134,0.2); color:white; transition:transform 0.3s ease;">
+      <p style="font-size:0.85rem; margin:0 0 8px 0; opacity:0.9; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Hours</p>
+      <p style="font-size:2.2rem; margin:0; font-weight:700;" id="hours">0</p>
+    </div>
+    <div class="timer-box" style="background:linear-gradient(135deg, #ff6b8b, #ff9eb3); padding:18px; border-radius:16px; text-align:center; box-shadow:0 12px 30px rgba(203,102,134,0.2); color:white; transition:transform 0.3s ease;">
+      <p style="font-size:0.85rem; margin:0 0 8px 0; opacity:0.9; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Minutes</p>
+      <p style="font-size:2.2rem; margin:0; font-weight:700;" id="minutes">0</p>
+    </div>
+    <div class="timer-box" style="background:linear-gradient(135deg, #ff6b8b, #ff9eb3); padding:18px; border-radius:16px; text-align:center; box-shadow:0 12px 30px rgba(203,102,134,0.2); color:white; transition:transform 0.3s ease;">
+      <p style="font-size:0.85rem; margin:0 0 8px 0; opacity:0.9; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Seconds</p>
+      <p style="font-size:2.2rem; margin:0; font-weight:700;" id="seconds">0</p>
     </div>
   </div>
 </section>
+
+<style>
+.timer-box:hover{ transform:translateY(-6px); }
+</style>
 
 <!-- ===== OPEN WHEN SECTION ===== -->
 <section id="open-when">
@@ -856,8 +876,12 @@ header h1{
     <span class="dot" data-section="countdowns"></span>
     <span class="dot" data-section="story"></span>
     <span class="dot" data-section="memories"></span>
-    <span class="dot" data-section="love-notes"></span>
     <span class="dot" data-section="future-plans"></span>
+    <span class="dot" data-section="read-my-heart"></span>
+    <span class="dot" data-section="time-together"></span>
+    <span class="dot" data-section="open-when"></span>
+    <span class="dot" data-section="pickup-lines"></span>
+    <span class="dot" data-section="love-notes"></span>
 </div>
 
 <!-- ===== MUSIC BUTTON ===== -->
