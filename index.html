@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonathan ❤️ Mary — Love Time Kenya</title>
+
+<style>
+/* ===== GENERAL ===== */
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:linear-gradient(135deg,#ffdce6 0%, #fff0f6 100%);
+  color:#4b2b3a;
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+  scroll-snap-type:y mandatory;
+}
+
+/* ===== SECTIONS ===== */
+section{
+  width:100%;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  scroll-snap-align:start;
+  padding:20px;
+  box-sizing:border-box;
+  position:relative;
+}
+
+/* ===== HEADER / HERO ===== */
+header h1{
+  font-size:4rem;
+  display:inline-block;
+}
+
+.letter{
+  display:inline-block;
+  animation: float 2s ease-in-out infinite;
+}
+
+.letter:nth-child(odd){animation-delay:0s;}
+.letter:nth-child(even){animation-delay:1s;}
+
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-15px);}
+}
+
+.subtitle{
+  margin-top:10px;
+  font-size:1.5rem;
+  opacity:.9;
+}
+
+/* ===== COUNTDOWN CARDS ===== */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:30px;
+  width:90%;
+}
+
+/* Countdown section background */
+#countdowns {
+  background: linear-gradient(180deg, rgba(255,240,245,0.75), rgba(255,230,240,0.75)),
+              url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+
+.card{
+  background:rgba(255,245,247,0.85);
+  border: 1px solid rgba(255,107,139,0.12);
+  backdrop-filter:blur(6px);
+  border-radius:25px;
+  padding:30px;
+  box-shadow:0 12px 30px rgba(203,102,134,0.08);
+  transition:.3s;
+  text-align:center;
+  color: #4b2b3a;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.05);
+}
+
+.card h3{
+  margin-bottom:15px;
+}
+
+.timer{
+  font-size:1.5rem;
+}
+
+/* ===== LOVE STORY ===== */
+#story {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(255, 107, 139, 0.3)), 
+              url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.story{
+  background:linear-gradient(180deg, rgba(255,245,247,0.95), rgba(255,238,244,0.95));
+  padding:40px;
+  border-radius:25px;
+  max-width:700px;
+  box-shadow:0 10px 25px rgba(203,102,134,0.08);
+  text-align:center;
+  font-size:1.3rem;
+  line-height:1.6;
+  color: #4b2b3a;
+}
+
+/* ===== MEMORIES SECTION ===== */
+#memories{
+  background:linear-gradient(135deg,#fff0f6 0%, #ffe6ef 100%);
+  color:#4b2b3a;
+}
+
+.memory-wrapper{
+  width:100%;
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(135deg,#fff0f6 0%, #ffe6ef 100%);
+}
+
+.memory-track{
+  display:flex;
+  gap:30px;
+  padding:20px 0;
+  width:fit-content;
+  animation:scrollMemories 60s linear infinite;
+}
+
+.memory-track:hover{
+  animation-play-state:paused;
+}
+
+.memory-card{
+  flex:0 0 300px;
+  background:rgba(255,245,247,0.95);
+  border-radius:20px;
+  padding:20px;
+  border:1px solid rgba(255,107,139,0.1);
+  box-shadow:0 8px 20px rgba(203,102,134,0.08);
+  text-align:center;
+  transition:transform 0.3s ease,box-shadow 0.3s ease;
+  cursor:pointer;
+  color:#4b2b3a;
+  backdrop-filter:blur(2px);
+}
+
+.memory-card:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 15px 35px rgba(203,102,134,0.15);
+}
+
+.memory-card h3{
+  margin:15px 0 8px 0;
+  font-size:1.2rem;
+  color:#ff6b8b;
+}
+
+.memory-card p{
+  margin:0;
+  font-size:0.95rem;
+  line-height:1.4;
+  opacity:0.85;
+}
+
+.memory-card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:12px;
+  display:block;
+  object-fit:cover;
+  height:200px;
+}
+
+@keyframes scrollMemories{
+  0%{
+    transform:translateX(0);
+  }
+  100%{
+    transform:translateX(calc(-300px * 4 - 30px * 4));
+  }
+}
+
+/* ===== FUTURE PLANS SCROLLING ===== */
+.plans-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.plans-track {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 20px;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+}
+
+.plans-track::-webkit-scrollbar {
+  height: 6px;
+}
+
+.plans-track::-webkit-scrollbar-track {
+  background: rgba(203,102,134,0.05);
+}
+
+.plans-track::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff6b8b, #ff9eb3);
+  border-radius: 3px;
+}
+
+.plan-card {
+  flex: 0 0 calc(100% - 40px);
+  background: rgba(255,245,247,0.9);
+  border-radius: 25px;
+  padding: 35px 25px;
+  border: 1px solid rgba(255,107,139,0.12);
+  box-shadow: 0 12px 30px rgba(203,102,134,0.08);
+  text-align: center;
+  color: #4b2b3a;
+  transition: all 0.3s ease;
+  scroll-snap-align: center;
+  cursor: grab;
+}
+
+.plan-card:active {
+  cursor: grabbing;
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(203,102,134,0.12);
+}
+
+.plan-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.plan-card h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #ff6b8b;
+}
+
+.plan-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .plan-card {
+    flex: 0 0 calc(50% - 15px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .plan-card {
+    flex: 0 0 calc(33.333% - 17px);
+  }
+}
+
+/* ===== MUSIC BUTTON ===== */
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:linear-gradient(135deg,#ff6b8b 0%, #ff9eb3 100%);
+  border:none;
+  padding:12px 18px;
+  border-radius:30px;
+  color:white;
+  cursor:pointer;
+  z-index:10;
+  box-shadow:0 8px 20px rgba(203,102,134,0.12);
+}
+
+/* ===== NAVIGATION DOTS ===== */
+.nav-dots {
+  position: fixed;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 107, 139, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 107, 139, 0.5);
+}
+
+.dot:hover {
+  background: rgba(255, 107, 139, 0.6);
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background: #ff6b8b;
+  transform: scale(1.3);
+  box-shadow: 0 0 15px rgba(255, 107, 139, 0.6);
+}
+
+/* ===== HEARTS ANIMATION ===== */
+.heart{
+  position:fixed;
+  top:-10px;
+  color:#ff6b8b;
+  animation: fall linear infinite;
+}
+
+@keyframes fall{
+  to{transform:translateY(110vh); opacity:0;}
+}
+</style>
+
+<style>
+/* ===== LOVE NOTES STYLES ===== */
+.note-form {
+  background: rgba(255, 245, 247, 0.95);
+  padding: 24px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 12px 30px rgba(203,102,134,0.08);
+  border: 1px solid rgba(255,107,139,0.08);
+}
+
+.form-group { margin-bottom: 14px; }
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(203,102,134,0.12);
+  font-size: 1rem;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg,#ff6b8b 0%, #ff9eb3 100%);
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 24px;
+  font-size: 1rem;
+}
+
+.notes-container {
+  width: 90%;
+  max-width: 900px;
+  margin-top: 18px;
+  display: none;
+  gap: 12px;
+}
+
+.note-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,245,247,0.95));
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 20px rgba(203,102,134,0.06);
+  border-left: 4px solid rgba(255,107,139,0.18);
+}
+
+.note-author { font-weight: 700; color: #ff6b8b; margin-bottom: 6px; }
+.note-text { color: #4b2b3a; margin-bottom: 8px; }
+.note-meta { font-size: 0.85rem; color: #8a6a74; display:flex; justify-content:space-between; align-items:center; }
+.note-sent { background: rgba(255,107,139,0.12); color:#ff6b8b; padding:4px 8px; border-radius:12px; font-weight:600; }
+
+/* ===== LOVE HEART LOCK STYLES ===== */
+.heart-lock-container {
+  perspective: 1000px;
+  cursor: pointer;
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+}
+
+.heart-lock-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform-style: preserve-3d;
+}
+
+.heart-lock-card.unlocked {
+  transform: rotateY(180deg);
+}
+
+.heart-lock-front, .heart-lock-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 30px;
+  box-sizing: border-box;
+  box-shadow: 0 8px 25px rgba(203,102,134,0.15);
+  gap: 15px;
+}
+
+.heart-lock-front {
+  background: linear-gradient(135deg, rgba(255,245,247,0.98), rgba(255,238,244,0.98));
+  border: 2px solid rgba(255,107,139,0.2);
+}
+
+.heart-lock-back {
+  background: linear-gradient(135deg, rgba(255,107,139,0.1), rgba(255,180,200,0.1));
+  border: 2px solid rgba(255,107,139,0.3);
+  transform: rotateY(180deg);
+  text-align: center;
+  padding: 25px;
+}
+
+.lock-icon {
+  font-size: 3rem;
+  animation: lockPulse 2s ease-in-out infinite;
+}
+
+@keyframes lockPulse {
+  0%, 100% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.1); opacity: 1; }
+}
+
+.lock-text {
+  font-size: 1.3rem;
+  color: #4b2b3a;
+  font-weight: 600;
+}
+
+.password-input {
+  padding: 10px 15px;
+  border: 2px solid rgba(255,107,139,0.2);
+  border-radius: 12px;
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 2px;
+  width: 200px;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.7);
+  color: #4b2b3a;
+  font-weight: 600;
+}
+
+.password-input::placeholder {
+  color: rgba(203,102,134,0.4);
+  letter-spacing: 0;
+}
+
+.unlock-btn {
+  padding: 8px 20px;
+  background: linear-gradient(135deg,#ff6b8b 0%, #ff9eb3 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.unlock-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255,107,139,0.3);
+}
+
+.unlock-btn:active {
+  transform: scale(0.98);
+}
+
+.lock-btn {
+  padding: 8px 20px;
+  background: linear-gradient(135deg,#ff6b8b 0%, #ff9eb3 100%);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 20px;
+}
+
+.lock-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255,107,139,0.3);
+}
+
+.lock-btn:active {
+  transform: scale(0.98);
+}
+
+.click-to-open {
+  font-size: 0.85rem;
+  color: #ff6b8b;
+  opacity: 0.8;
+  animation: fadeInOut 2s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.heart-message {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b2b3a;
+  font-style: italic;
+  margin: 0;
+}
+
+.heart-message strong {
+  color: #ff6b8b;
+  font-weight: 700;
+}
+</style>
+</head>
+
+<!-- Added note styles above for clarity -->
+
+
+<body>
+
+<!-- ===== SECTION 1: HERO / HEADER ===== -->
+<section id="hero">
+  <header>
+    <h1 id="animated-name"></h1>
+    <p class="subtitle">Counting love, one second at a time</p>
+  </header>
+</section>
+
+<!-- ===== SECTION 2: COUNTDOWN CARDS ===== -->
+<section id="countdowns">
+  <div class="section-header">
+    <h2>Our Special Moments</h2>
+  </div>
+  <div class="cards">
+    <div class="card">
+      <h3>🎂 Jonathan's Birthday</h3>
+      <div id="jonathan" class="timer"></div>
+    </div>
+    <div class="card">
+      <h3>🎉 Mary's Birthday</h3>
+      <div id="mary" class="timer"></div>
+    </div>
+    <div class="card">
+      <h3>🌹 Valentine's Day</h3>
+      <div id="valentine" class="timer"></div>
+    </div>
+    <div class="card">
+      <h3>💍 Anniversary</h3>
+      <div id="anniversary" class="timer"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: LOVE STORY ===== -->
+<section id="story">
+  <div class="story">
+    <p>
+      We met, smiled, grew together, and every day our love becomes stronger.  
+      This space keeps our time, our memories, and our future — here in Kenya ❤️.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: MEMORY TIMELINE ===== -->
+<section id="memories">
+  <h2 style="font-size:3rem; margin-bottom:30px; color:#4b2b3a;">💌 Our Memories</h2>
+  <div class="memory-wrapper">
+    <div class="memory-track">
+      <!-- Memory cards will be populated dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: FUTURE PLANS ===== -->
+<section id="future-plans">
+  <h2 style="font-size:3rem; margin-bottom:30px; color:#4b2b3a;">💭 Our Dreams</h2>
+  <div class="plans-wrapper">
+    <div class="plans-track" id="plansTrack">
+      <!-- Plans will be populated dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- ===== READ MY HEART CARD ===== -->
+<section id="read-my-heart">
+  <h2 style="font-size:3rem; margin-bottom:30px; color:#4b2b3a;">❤️ Read My Heart</h2>
+  <div class="heart-lock-container">
+    <div class="heart-lock-card" id="heartLockCard">
+      <!-- LOCKED SIDE -->
+      <div class="heart-lock-front">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-text">My Heart</div>
+        <input type="password" id="passwordInput" class="password-input" placeholder="Enter password...">
+        <button class="unlock-btn" onclick="toggleHeartLock()">Unlock</button>
+        <div class="click-to-open">A secret message inside...</div>
+      </div>
+      
+      <!-- UNLOCKED SIDE -->
+      <div class="heart-lock-back">
+        <p class="heart-message">
+          <strong>To my love,</strong><br><br>
+          In your eyes, I found my home.<br>
+          In your smile, I found my peace.<br>
+          In your love, I found my purpose.<br><br>
+          Every moment with you is a <strong>treasure</strong> I hold dear.<br>
+          Every heartbeat whispers your name.<br>
+          Every dream includes forever with <strong>you</strong>.<br><br>
+          Thank you for being my greatest blessing. 💕
+        </p>
+        <button class="lock-btn" onclick="toggleHeartLock()">🔒 Lock</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIME TOGETHER CARD ===== -->
+<section id="time-together" style="background: linear-gradient(rgba(0,0,0,0.35), rgba(255,107,139,0.25)), url('images/timer_bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+  <h2 style="font-size:3rem; margin-bottom:30px; color:#fff; text-shadow: 2px 2px 4px rgba(0,0,0,0.5);">💖 Our Love Timer</h2>
+  <div class="card-wrapper" style="display:flex; justify-content:center;">
+    <div class="card" style="background:linear-gradient(180deg, rgba(255,245,247,0.95), rgba(255,238,244,0.95)); backdrop-filter:blur(8px); padding:20px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.2); width:350px; text-align:center; border:1px solid rgba(255,107,139,0.12);">
+      <h3 style="font-size:1.5rem; margin-bottom:15px; color:#ff6b8b;">Days in Love</h3>
+      <div class="timer" style="font-size:1rem; color:#4b2b3a; line-height:1.8;">
+        <p>Years: <span id="years">0</span></p>
+        <p>Months: <span id="months">0</span></p>
+        <p>Weeks: <span id="weeks">0</span></p>
+        <p>Days: <span id="days">0</span></p>
+        <p>Hours: <span id="hours">0</span></p>
+        <p>Minutes: <span id="minutes">0</span></p>
+        <p>Seconds: <span id="seconds">0</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pickup-lines">
+  
+</section>
+
+<!-- ===== LOVE NOTES ===== -->
+<section id="love-notes" class="snap-section">
+    <div class="section-header">
+        <h2>Leave a Love Note</h2>
+    </div>
+    
+    <form class="note-form fade-in">
+        <div class="form-group">
+            <input type="text" id="noteName" placeholder="Your name (optional)">
+        </div>
+        <div class="form-group">
+            <textarea id="noteMessage" placeholder="Write your love note here..." required></textarea>
+        </div>
+      <button type="button" class="submit-btn" onclick="addLoveNote()">
+        <i class="fas fa-heart"></i> Send Love
+      </button>
+      <div style="margin-top:12px; text-align:center;">
+        <button id="toggleNotesBtn" type="button" class="submit-btn" onclick="toggleNotesVisibility()">Show love messages sent</button>
+      </div>
+    </form>
+    
+    <div class="notes-container" id="notesContainer">
+        <!-- Love notes will appear here -->
+    </div>
+</section>
+
+<!-- ===== NAVIGATION DOTS ===== -->
+<div class="nav-dots">
+    <span class="dot active" data-section="hero"></span>
+    <span class="dot" data-section="countdowns"></span>
+    <span class="dot" data-section="story"></span>
+    <span class="dot" data-section="memories"></span>
+    <span class="dot" data-section="love-notes"></span>
+    <span class="dot" data-section="future-plans"></span>
+</div>
+
+<!-- ===== MUSIC BUTTON ===== -->
+<audio id="music" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3">
+</audio>
+<button class="music-btn" onclick="toggleMusic()">🎵 Music</button>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+// ===== MEMORIES DATA =====
+const memories = [
+  { image: 'images/memory1.jpg', title: 'Met in School', date: 'March 2018', description: 'First smiles and hello!' },
+  { image: 'images/memory3.jpg', title: 'First Birthday Together', date: 'May 2019', description: 'Celebrating love early on.' },
+  { image: 'images/memory4.jpg', title: "First Valentine's", date: 'Feb 2020', description: 'A day full of roses and hearts.' },
+  { image: 'images/memory1.jpg', title: 'Engaged', date: 'June 2022', description: 'Promises for a lifetime.' }
+];
+
+// ===== FUTURE PLANS DATA =====
+const futurePlans = [
+  { icon: '✈️', title: 'Travel Together', description: 'Visit 5 continents together, starting with a safari in Tanzania and ending with Paris under the stars.' },
+  { icon: '🏡', title: 'Build Our Home', description: 'A cozy house in Karen, Nairobi with a garden full of roses and a library of our favorite books.' },
+  { icon: '👨‍👩‍👧‍👦', title: 'Start a Family', description: 'Two beautiful children raised with love, laughter, and Kenyan values.' },
+  { icon: '💼', title: 'Career Dreams', description: 'Start a tech company together that makes a positive impact in East Africa.' },
+  { icon: '🎓', title: 'Keep Learning', description: 'Support each other\'s growth through continuous learning and personal development.' },
+  { icon: '🌍', title: 'Give Back', description: 'Make a positive impact in our community and help those in need around us.' }
+];
+
+// ===== LOAD MEMORIES =====
+function loadMemories() {
+  const track = document.querySelector('.memory-track');
+  if (!track) return;
+
+  track.innerHTML = '';
+
+  [...memories, ...memories].forEach(memory => {
+    const card = document.createElement('div');
+    card.className = 'memory-card';
+    card.innerHTML = `
+      <img src="${memory.image}" alt="${memory.title}">
+      <h3>${memory.title}</h3>
+      <p>${memory.date} — ${memory.description}</p>
+    `;
+    track.appendChild(card);
+  });
+}
+
+// ===== LOAD PLANS =====
+function loadPlans() {
+  const track = document.getElementById('plansTrack');
+  if (!track) return;
+
+  track.innerHTML = '';
+
+  futurePlans.forEach(plan => {
+    const card = document.createElement('div');
+    card.className = 'plan-card';
+    card.innerHTML = `
+      <span class="plan-icon">${plan.icon}</span>
+      <h3>${plan.title}</h3>
+      <p>${plan.description}</p>
+    `;
+    track.appendChild(card);
+  });
+}
+
+// ===== LOVE NOTES: LOAD & SEND (WhatsApp) =====
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function loadLoveNotes() {
+  const notes = JSON.parse(localStorage.getItem('loveNotes')) || [];
+  const container = document.getElementById('notesContainer');
+  if (!container) return;
+  container.innerHTML = '';
+
+  // show newest first
+  notes.slice().reverse().forEach(note => {
+    const card = document.createElement('div');
+    card.className = 'note-card';
+    const linkHtml = note.url ? `<div style="margin-top:8px;"><a href="${escapeHtml(note.url)}" target="_blank" rel="noopener" style="color:#ff6b8b; text-decoration:underline;">View page</a></div>` : '';
+    card.innerHTML = `
+      <div class="note-author">${escapeHtml(note.name || 'Anonymous')}</div>
+      <div class="note-text">${escapeHtml(note.message)}</div>
+      <div class="note-meta"><span>${new Date(note.date).toLocaleDateString()}</span>${note.sentVia ? `<span class="note-sent">${escapeHtml(note.sentVia)}</span>` : ''}</div>
+      ${linkHtml}
+    `;
+    container.appendChild(card);
+  });
+}
+
+function addLoveNote(){
+  const nameEl = document.getElementById('noteName');
+  const msgEl = document.getElementById('noteMessage');
+  const name = nameEl ? nameEl.value.trim() || 'Anonymous' : 'Anonymous';
+  const message = msgEl ? msgEl.value.trim() : '';
+  if(!message){ alert('Please write a love note!'); return; }
+  // Prepare page URL and attempt to shorten it (fallback to full URL)
+  const pageUrl = window.location.href;
+
+  const shortenUrl = async (url) => {
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 3000);
+      const resp = await fetch('https://tinyurl.com/api-create.php?url=' + encodeURIComponent(url), { signal: controller.signal });
+      clearTimeout(timeout);
+      if (resp.ok) {
+        const short = await resp.text();
+        if (short && short.startsWith('http')) return short;
+      }
+    } catch (e) {
+      // ignore and fallback
+    }
+    return url;
+  };
+
+  // Build share text
+  (async () => {
+    const short = await shortenUrl(pageUrl);
+    const shareText = `${name} says: ${message}\n\nSent via Our Love Time Kenya\n\nView this page: ${short}`;
+
+    // Try copying text to clipboard
+    try { await navigator.clipboard.writeText(shareText); } catch (e) { /* ignore */ }
+
+    // Open WhatsApp share
+    const waUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(shareText);
+    window.open(waUrl, '_blank');
+
+    // Save note locally with sentVia flag and saved short url
+    const notes = JSON.parse(localStorage.getItem('loveNotes')) || [];
+    const newNote = { name, message, date: new Date().toISOString(), sentVia: 'WhatsApp', url: short };
+    notes.push(newNote);
+    localStorage.setItem('loveNotes', JSON.stringify(notes));
+
+    // Clear inputs and refresh list only if visible
+    if(nameEl) nameEl.value = '';
+    if(msgEl) msgEl.value = '';
+    const container = document.getElementById('notesContainer');
+    if (container && container.style.display !== 'none') loadLoveNotes();
+
+    // small UI feedback on button
+    const btn = document.querySelector('.submit-btn');
+    if(btn){
+      const orig = btn.innerHTML;
+      btn.innerHTML = 'Sent ✓';
+      setTimeout(()=> btn.innerHTML = orig, 1800);
+    }
+  })();
+}
+
+// Toggle notes visibility
+function toggleNotesVisibility(){
+  const container = document.getElementById('notesContainer');
+  const btn = document.getElementById('toggleNotesBtn');
+  if(!container || !btn) return;
+  if(container.style.display === 'none' || container.style.display === ''){
+    container.style.display = 'grid';
+    loadLoveNotes();
+    btn.innerText = 'Hide love messages';
+    // scroll to notes
+    container.scrollIntoView({behavior:'smooth'});
+  } else {
+    container.style.display = 'none';
+    btn.innerText = 'Show love messages sent';
+  }
+}
+
+// ===== ANIMATED NAMES =====
+function animateNames() {
+  const name = "Jonathan ❤️ Mary";
+  const container = document.getElementById("animated-name");
+  container.innerHTML = "";
+  for(let char of name){
+    const span = document.createElement("span");
+    span.className="letter";
+    span.textContent=char;
+    container.appendChild(span);
+  }
+}
+
+// ===== COUNTDOWN TIMERS =====
+function kenyaNow(){
+  return new Date(new Date().toLocaleString("en-US",{timeZone:"Africa/Nairobi"}));
+}
+
+function nextDate(month,day){
+  let now=kenyaNow();
+  let year=now.getFullYear();
+  let d=new Date(year,month-1,day);
+  if(d<now)d.setFullYear(year+1);
+  return d;
+}
+
+// ===== TIME TOGETHER COUNTER (Since June 2, 2025 at 12:00 Kenya time) =====
+function updateTimeTogether() {
+  const el = document.getElementById('timeTogether');
+  
+  // Relationship start: June 2, 2025 at 12:00 PM Kenya time
+  const relationshipStartStr = new Date('2025-06-02T12:00:00').toLocaleString('en-US', {timeZone: 'Africa/Nairobi'});
+  const relationshipStart = new Date(relationshipStartStr);
+  const now = kenyaNow();
+  
+  const diff = now - relationshipStart;
+  
+  if (diff <= 0) {
+    if (el) el.innerHTML = 'Our love journey begins...';
+    return;
+  }
+  
+  // Calculate years
+  let years = 0;
+  let dateAfterYears = new Date(relationshipStart);
+  while (true) {
+    let nextYear = new Date(relationshipStart);
+    nextYear.setFullYear(nextYear.getFullYear() + years + 1);
+    if (nextYear <= now) {
+      years++;
+      dateAfterYears = nextYear;
+    } else {
+      break;
+    }
+  }
+  
+  // Calculate months (remaining after years)
+  let months = 0;
+  let dateAfterMonths = new Date(dateAfterYears);
+  while (true) {
+    let nextMonth = new Date(dateAfterYears);
+    nextMonth.setMonth(nextMonth.getMonth() + months + 1);
+    if (nextMonth <= now) {
+      months++;
+      dateAfterMonths = nextMonth;
+    } else {
+      break;
+    }
+  }
+  
+  // Remaining time after years and months
+  const remainingMs = now - dateAfterMonths;
+  const weeks = Math.floor(remainingMs / (7 * 24 * 60 * 60 * 1000));
+  const daysAfterWeeks = Math.floor((remainingMs % (7 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000));
+  const hours = Math.floor((remainingMs % (24 * 60 * 60 * 1000)) / (60 * 60 * 1000));
+  const minutes = Math.floor((remainingMs % (60 * 60 * 1000)) / (60 * 1000));
+  const seconds = Math.floor((remainingMs % (60 * 1000)) / 1000);
+  
+  // Update individual span IDs
+  const yearEl = document.getElementById('years');
+  const monthEl = document.getElementById('months');
+  const weekEl = document.getElementById('weeks');
+  const dayEl = document.getElementById('days');
+  const hourEl = document.getElementById('hours');
+  const minEl = document.getElementById('minutes');
+  const secEl = document.getElementById('seconds');
+  
+  if (yearEl) yearEl.innerHTML = years;
+  if (monthEl) monthEl.innerHTML = months;
+  if (weekEl) weekEl.innerHTML = weeks;
+  if (dayEl) dayEl.innerHTML = daysAfterWeeks;
+  if (hourEl) hourEl.innerHTML = hours;
+  if (minEl) minEl.innerHTML = minutes;
+  if (secEl) secEl.innerHTML = seconds;
+  
+  // Also update main timer card
+  if (el) el.innerHTML = `${years}y ${months}m ${weeks}w ${daysAfterWeeks}d ${hours}h ${minutes}m ${seconds}s ❤️`;
+}
+
+function countdown(id,date){
+  const now=kenyaNow();
+  const diff=date-now;
+  if(diff<=0){
+    document.getElementById(id).innerHTML="🎉 Today is the day!";
+    confetti();
+    return;
+  }
+  const d=Math.floor(diff/86400000);
+  const h=Math.floor(diff/3600000)%24;
+  const m=Math.floor(diff/60000)%60;
+  const s=Math.floor(diff/1000)%60;
+  document.getElementById(id).innerHTML=`${d}d ${h}h ${m}m ${s}s`;
+}
+
+// Update countdowns every second
+setInterval(()=>{
+  updateTimeTogether();
+  countdown("jonathan",nextDate(5,12));
+  countdown("mary",nextDate(8,20));
+  countdown("valentine",nextDate(2,14));
+  countdown("anniversary",nextDate(6,1));
+},1000);
+
+// ===== MUSIC TOGGLE =====
+function toggleMusic(){
+  const m=document.getElementById("music");
+  if(m.paused)m.play();
+  else m.pause();
+}
+
+// ===== FLOATING HEARTS CONFETTI =====
+function confetti(){
+  for(let i=0;i<80;i++){
+    let c=document.createElement("div");
+    c.className="heart";
+    c.innerHTML="❤️";
+    c.style.left=Math.random()*100+"vw";
+    c.style.animationDuration=2+Math.random()*3+"s";
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),5000);
+  }
+}
+
+setInterval(()=>{
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=3+Math.random()*5+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8000);
+},500);
+
+// ===== NAVIGATION DOTS =====
+function setupNavigationDots() {
+  const dots = document.querySelectorAll('.dot');
+  
+  // Click handler for dots
+  dots.forEach(dot => {
+    dot.addEventListener('click', function() {
+      const sectionId = this.getAttribute('data-section');
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+  
+  // Update active dot on scroll
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section');
+    const scrollPos = window.scrollY + window.innerHeight / 2;
+    
+    sections.forEach((section, index) => {
+      if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+        // Remove active class from all dots
+        dots.forEach(dot => dot.classList.remove('active'));
+        // Add active class to corresponding dot
+        if (dots[index]) {
+          dots[index].classList.add('active');
+        }
+      }
+    });
+  });
+}
+
+// ===== TOGGLE HEART LOCK =====
+function toggleHeartLock() {
+  const card = document.getElementById('heartLockCard');
+  const passwordInput = document.getElementById('passwordInput');
+  const correctPassword = 'love'; // Set password to 'love'
+  
+  // Check if already unlocked
+  if (card.classList.contains('unlocked')) {
+    card.classList.remove('unlocked');
+    passwordInput.value = '';
+    return;
+  }
+  
+  // Check password
+  if (passwordInput.value === correctPassword) {
+    card.classList.add('unlocked');
+  } else {
+    alert('❌ Incorrect password! Try again. 💕');
+    passwordInput.value = '';
+    passwordInput.focus();
+  }
+}
+
+// ===== INITIALIZE ON DOM READY =====
+window.addEventListener('DOMContentLoaded', () => {
+  animateNames();
+  loadMemories();
+  loadPlans();
+  loadLoveNotes();
+  updateTimeTogether();
+  setupNavigationDots();
+});
+</script>
+
+</body>
+</html>
